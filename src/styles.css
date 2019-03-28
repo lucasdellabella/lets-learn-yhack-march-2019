@@ -8,6 +8,8 @@
   justify-content: flex-end;
   align-items: center;
   background-color: cyan;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 .post > * {

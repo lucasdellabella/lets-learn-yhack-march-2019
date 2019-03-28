@@ -20,7 +20,7 @@ const post2 = {
 
 const post3 = {
   meetupId: 3,
-  title: "title3",
+  title: "REALLY long TITLE is so long yadayadayadayadayadablasdfbbbbbbb",
   created: "2015-03-27T12:00:00Z",
   organizer: "jzhao",
   interested: [],
