@@ -10,7 +10,7 @@ const post1 = {
 
 const post2 = {
   meetupId: 2,
-  title: "title2",
+  title: " Scribe - Splunk - SignalFx - PaaSTA - Vividcortex Workshop",
   created: "2015-03-26T12:00:00Z",
   organizer: "csciavol",
   interested: ["jzhao"],
