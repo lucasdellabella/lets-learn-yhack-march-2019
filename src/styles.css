@@ -2,3 +2,19 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.post {
+  display: flex;
+  justify-content: flex-end;
+  background-color: cyan;
+}
+
+.post > :first-child {
+  background-color: yellow;
+  margin-right: auto;
+}
+
+.posts-container {
+  display: flex;
+  flex-direction: column;
+}

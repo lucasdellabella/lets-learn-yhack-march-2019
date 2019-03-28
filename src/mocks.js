@@ -1,6 +1,6 @@
 const post1 = {
   meetupId: 1,
-  topicName: "topicName1",
+  title: "title1",
   created: "2015-03-25T12:00:00Z",
   organizer: "ldb",
   interested: ["csciavol", "jzhao"],
@@ -10,7 +10,7 @@ const post1 = {
 
 const post2 = {
   meetupId: 2,
-  topicName: "topicName2",
+  title: "title2",
   created: "2015-03-26T12:00:00Z",
   organizer: "csciavol",
   interested: ["jzhao"],
@@ -20,7 +20,7 @@ const post2 = {
 
 const post3 = {
   meetupId: 3,
-  topicName: "topicName3",
+  title: "title3",
   created: "2015-03-27T12:00:00Z",
   organizer: "jzhao",
   interested: [],
