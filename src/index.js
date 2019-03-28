@@ -36,7 +36,7 @@ const Post = ({
     <div className="post inline">
       <div>{title}</div>
       <div>{interested.length}</div>
-      <div>{organizer}</div>
+      <div className="organizer">{organizer}</div>
     </div>
   );
 };

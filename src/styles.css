@@ -6,7 +6,12 @@
 .post {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   background-color: cyan;
+}
+
+.post > * {
+  padding: 12px;
 }
 
 .post > :first-child {
@@ -17,4 +22,8 @@
 .posts-container {
   display: flex;
   flex-direction: column;
+}
+
+.organizer {
+  width: 100px;
 }
