@@ -3,10 +3,8 @@ import { Formik } from "formik";
 import Button from "react-bootstrap/Button";
 import ProposeMeetupForm from "./ProposeMeetupForm";
 
-import "./ProposeMeetup.css";
-
 const ProposeMeetup = ({ className }) => {
-  const [opened, setOpened] = useState(false);
+  const [opened, setOpened] = useState(true);
   return (
     <div className={className}>
       {!opened ? (
