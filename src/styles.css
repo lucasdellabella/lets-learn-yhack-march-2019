@@ -5,20 +5,26 @@
 
 .post {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.post-header {
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: cyan;
-  margin-bottom: 10px;
   border-radius: 5px;
 }
 
-.post > * {
+.post-header > * {
   padding: 12px;
 }
 
-.post > :first-child {
+.post-header > :first-child {
   background-color: yellow;
   margin-right: auto;
+  border-radius: 3px 0 0 3px;
 }
 
 .posts-container {
@@ -67,4 +73,16 @@
 
 .categories > .form-check {
   padding: 5px 20px;
+}
+
+.post-title {
+  cursor: pointer;
+}
+
+.post-title > :first-child {
+  margin-right: 10px;
+}
+
+.post-description {
+  background-color: grey;
 }
