@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import posts from "./mocks";
+import mockedPosts from "./mocks";
 import ProposeMeetup from "./ProposeMeetup";
+import { getPosts } from "./api";
 
 import "./styles.css";
 
 function App() {
+  const [posts, setPosts] = useState([]);
+  //THOUGHT: Should I be making prefilling this server-side somehow?
+  useEffect(() => {
+    getPosts().then(result => setPosts(result));
+  }, []);
   return (
     <div className="App">
       <h1>Let's Learn</h1>
@@ -15,13 +21,15 @@ function App() {
   );
 }
 
-const Posts = ({ posts }) => (
-  <div className="posts-container">
-    {posts.map(post => (
-      <Post post={post} />
-    ))}
-  </div>
-);
+const Posts = ({ posts }) => {
+  return (
+    <div className="posts-container">
+      {posts.map(post => (
+        <Post post={post} />
+      ))}
+    </div>
+  );
+};
 
 const Post = ({
   post: {
@@ -44,4 +52,4 @@ const Post = ({
 };
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App posts={posts} />, rootElement);
+ReactDOM.render(<App />, rootElement);
