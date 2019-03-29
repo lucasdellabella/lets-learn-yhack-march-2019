@@ -1,9 +1,10 @@
-import React from "react";
-import { Button, Form } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Row, Form } from "react-bootstrap";
 
 const ProposeMeetupForm = props => (
-  <form onSubmit={props.handleSubmit}>
-    <input
+  <Form onSubmit={props.handleSubmit}>
+    <h3>What do you want to learn about?</h3>
+    <Form.Control
       type="text"
       onChange={props.handleChange}
       onBlur={props.handleBlur}
@@ -12,26 +13,36 @@ const ProposeMeetupForm = props => (
       placeholder="Title"
     />
     {props.errors.title && <div id="feedback">{props.errors.title}</div>}
-    <input
+    <Form.Control
       type="text"
       onChange={props.handleChange}
       onBlur={props.handleBlur}
       value={props.values.description}
       name="description"
       placeholder="Description"
+      as="textarea"
     />
     {props.errors.description && (
       <div id="feedback">{props.errors.description}</div>
     )}
-    <div className="categories">
-      {["Product", "Design", "Data Science", "Engineering"].map(category => (
-        <RadioButton text={category} />
-      ))}
-    </div>
+    <RadioButtonGroup
+      groupName={"categories"}
+      categories={["Product", "Design", "Data Science", "Engineering", "Misc."]}
+    />
     <Button type="submit">Submit</Button>
-  </form>
+  </Form>
 );
 
-const RadioButton = ({ text }) => <Form.Check type={"radio"} label={text} />;
+const RadioButtonGroup = ({ groupName, categories }) => (
+  <Form.Group className="categories" name={groupName}>
+    {categories.map(category => (
+      <RadioButton category={category} group={groupName} />
+    ))}
+  </Form.Group>
+);
+
+const RadioButton = ({ group, category }) => (
+  <Form.Check type={"radio"} label={category} name={group} />
+);
 
 export default ProposeMeetupForm;
