@@ -1,3 +1,19 @@
 .proposal {
-  margin-bottom: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+.proposal form {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories {
+  display: flex;
+}
+
+.categories > .form-check {
+  margin: 0 15px;
 }
