@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, ToggleButtonGroup, Form } from "react-bootstrap";
 
 const ProposeMeetupForm = props => (
-  <form onSubmit={props.handleSubmit}>
+  <Form onSubmit={props.handleSubmit}>
+    <h3>What do you want to learn about?</h3>
     <input
       type="text"
       onChange={props.handleChange}
@@ -23,15 +24,19 @@ const ProposeMeetupForm = props => (
     {props.errors.description && (
       <div id="feedback">{props.errors.description}</div>
     )}
-    <div className="categories">
-      {["Product", "Design", "Data Science", "Engineering"].map(category => (
-        <RadioButton text={category} />
-      ))}
-    </div>
+    <ToggleButtonGroup className="categories" name="categories">
+      {["Product", "Design", "Data Science", "Engineering", "Misc."].map(
+        category => (
+          <RadioButton category={category} />
+        )
+      )}
+    </ToggleButtonGroup>
     <Button type="submit">Submit</Button>
-  </form>
+  </Form>
 );
 
-const RadioButton = ({ text }) => <Form.Check type={"radio"} label={text} />;
+const RadioButton = ({ category }) => (
+  <Form.Check type={"radio"} label={category} />
+);
 
 export default ProposeMeetupForm;
